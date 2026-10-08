@@ -1,6 +1,6 @@
 package pizzaria;
 
-public class PedidoRegistrado extends Pedido {
+public class PedidoEstadoRegistrado extends PedidoEstado {
 
     private PedidoEstadoRegistrado() {};
     private static PedidoEstadoRegistrado instance = new PedidoEstadoRegistrado();
@@ -18,7 +18,7 @@ public class PedidoRegistrado extends Pedido {
     }
 
     public boolean preparar(Pedido pedido) {
-        pedido.setEstado(PedidoEstadoCancelado.getInstance());
+        pedido.setEstado(PedidoEstadoPreparando.getInstance());
         return true;
     }
 
